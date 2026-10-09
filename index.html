@@ -1,0 +1,951 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prisha Chatterjee | Personal Portfolio</title>
+
+    <style>
+        /* ---------- GENERAL STYLES ---------- */
+
+        :root {
+            --navy: #172a46;
+            --blue: #4169a1;
+            --light-blue: #eaf0f8;
+            --cream: #faf9f6;
+            --white: #ffffff;
+            --gray: #626c7a;
+            --border: #e1e5ec;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--cream);
+            color: var(--navy);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        section {
+            padding: 85px 0;
+            scroll-margin-top: 80px;
+        }
+
+        .section-label {
+            color: var(--blue);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 2.3rem;
+            margin-bottom: 18px;
+            letter-spacing: -1px;
+        }
+
+        .section-description {
+            color: var(--gray);
+            max-width: 650px;
+            margin-bottom: 35px;
+        }
+
+        /* ---------- NAVIGATION ---------- */
+
+        header {
+            background: rgba(250, 249, 246, 0.96);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            min-height: 76px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.92rem;
+            color: var(--gray);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        /* ---------- HERO SECTION ---------- */
+
+        .hero {
+            min-height: 580px;
+            display: flex;
+            align-items: center;
+            padding: 90px 0;
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    #e4ebf5 0,
+                    transparent 35%
+                ),
+                var(--cream);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.4fr 0.6fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .intro-tag {
+            display: inline-block;
+            background: var(--light-blue);
+            color: var(--blue);
+            border-radius: 30px;
+            padding: 7px 15px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 6vw, 4.7rem);
+            line-height: 1.1;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+        }
+
+        .hero-description {
+            color: var(--gray);
+            font-size: 1.08rem;
+            max-width: 570px;
+            margin-bottom: 30px;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 23px;
+            border-radius: 7px;
+            font-weight: bold;
+            font-size: 0.93rem;
+            transition: 0.2s ease;
+        }
+
+        .button-primary {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .button-primary:hover {
+            background: var(--blue);
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            border: 1px solid var(--border);
+            background: var(--white);
+        }
+
+        .button-secondary:hover {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        .hero-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: 0 15px 45px rgba(23, 42, 70, 0.07);
+        }
+
+        .profile-placeholder {
+            width: 125px;
+            height: 125px;
+            background: var(--light-blue);
+            color: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+            border: 4px solid var(--white);
+            outline: 1px solid var(--border);
+        }
+
+        .hero-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .hero-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 0.78rem;
+            color: #356647;
+            background: #e8f4e9;
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        /* ---------- ABOUT SECTION ---------- */
+
+        .about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 17px;
+        }
+
+        .info-card {
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 15px;
+        }
+
+        .info-card h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .info-card p {
+            color: var(--gray);
+            font-size: 0.93rem;
+        }
+
+        /* ---------- EDUCATION SECTION ---------- */
+
+        .education-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            gap: 22px;
+            align-items: flex-start;
+            box-shadow: 0 8px 25px rgba(23, 42, 70, 0.03);
+        }
+
+        .education-icon {
+            width: 55px;
+            height: 55px;
+            flex-shrink: 0;
+            border-radius: 12px;
+            background: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .education-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .education-card p {
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+
+        .education-date {
+            color: var(--blue);
+            font-weight: bold;
+            font-size: 0.88rem;
+        }
+
+        /* ---------- SKILLS SECTION ---------- */
+
+        .skills {
+            background: var(--white);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 25px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.08rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tags span {
+            background: var(--light-blue);
+            color: var(--navy);
+            padding: 6px 11px;
+            border-radius: 5px;
+            font-size: 0.82rem;
+        }
+
+        /* ---------- PROJECTS SECTION ---------- */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 35px rgba(23, 42, 70, 0.08);
+        }
+
+        .project-banner {
+            min-height: 160px;
+            background: var(--light-blue);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+        }
+
+        .project-card:nth-child(2) .project-banner {
+            background: #f0e9df;
+        }
+
+        .project-card:nth-child(3) .project-banner {
+            background: #e7eee5;
+        }
+
+        .project-card:nth-child(4) .project-banner {
+            background: #eee8f6;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: var(--gray);
+            font-size: 0.93rem;
+            margin-bottom: 15px;
+        }
+
+        .project-type {
+            font-size: 0.78rem;
+            font-weight: bold;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ---------- CONTACT SECTION ---------- */
+
+        .contact {
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact .section-label {
+            color: #b8cbed;
+        }
+
+        .contact h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 18px;
+        }
+
+        .contact p {
+            color: #d0d8e4;
+            max-width: 570px;
+            margin: 0 auto 28px;
+        }
+
+        .contact .button {
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        .contact .button:hover {
+            background: var(--light-blue);
+        }
+
+        .social-links {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            font-size: 0.92rem;
+        }
+
+        .social-links a {
+            color: #d0d8e4;
+        }
+
+        .social-links a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        /* ---------- FOOTER ---------- */
+
+        footer {
+            padding: 23px 0;
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.84rem;
+        }
+
+        /* ---------- MOBILE RESPONSIVENESS ---------- */
+
+        @media (max-width: 800px) {
+            .hero-content,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                gap: 40px;
+            }
+
+            .hero-card {
+                max-width: 400px;
+                width: 100%;
+                margin: auto;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .nav-links {
+                gap: 13px;
+            }
+
+            .nav-links a {
+                font-size: 0.82rem;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .container {
+                width: 90%;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            nav {
+                align-items: flex-start;
+                padding: 17px 0;
+                flex-direction: column;
+            }
+
+            .nav-links {
+                width: 100%;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .hero {
+                padding: 65px 0;
+            }
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .section-title {
+                font-size: 1.9rem;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-card {
+                padding: 22px;
+                gap: 15px;
+            }
+
+            .education-icon {
+                width: 43px;
+                height: 43px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">
+                    Prisha Chatterjee<span>.</span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#education">Education</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+
+            <div>
+                <span class="intro-tag">
+                    Rutgers Business School Student
+                </span>
+
+                <h1>
+                    Hi, I'm Prisha<br>
+                    <span>Chatterjee.</span>
+                </h1>
+
+                <p class="hero-description">
+                    I'm a Rutgers business student interested in exploring
+                    the intersection of business, strategy, and innovation.
+                    I'm passionate about learning, solving problems, and
+                    finding opportunities to make a meaningful impact.
+                </p>
+
+                <div class="button-group">
+                    <a href="#projects" class="button button-primary">
+                        Explore My Work →
+                    </a>
+
+                    <a href="#contact" class="button button-secondary">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <div class="profile-placeholder">PC</div>
+
+                <h3>Prisha Chatterjee</h3>
+
+                <p>Rutgers Business School</p>
+                <p>New Brunswick, New Jersey</p>
+
+                <span class="status">
+                    Open to Learning & Opportunities
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section class="about" id="about">
+        <div class="container about-grid">
+
+            <div>
+                <p class="section-label">A little about me</p>
+
+                <h2 class="section-title">
+                    Curious by nature.<br>
+                    Driven by growth.
+                </h2>
+
+                <div class="about-text">
+                    <p>
+                        I'm Prisha Chatterjee, a student at Rutgers Business
+                        School with an interest in understanding how
+                        businesses grow, adapt, and create value.
+                    </p>
+
+                    <p>
+                        Through my academic experiences and personal
+                        projects, I'm building my knowledge of business
+                        fundamentals, communication, analytical thinking,
+                        and collaboration.
+                    </p>
+
+                    <p>
+                        I'm always looking for opportunities to challenge
+                        myself, learn from others, and apply what I learn
+                        to real-world problems.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <div class="info-card">
+                    <h3>My Approach</h3>
+                    <p>
+                        Stay curious, think critically, and approach
+                        challenges with an open mind.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>What Interests Me</h3>
+                    <p>
+                        Business strategy, marketing, finance, consulting,
+                        entrepreneurship, and innovation.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>What I'm Working Toward</h3>
+                    <p>
+                        Developing practical skills, gaining experience,
+                        and discovering where I can make the greatest impact.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+        <div class="container">
+
+            <p class="section-label">My academic journey</p>
+
+            <h2 class="section-title">Education</h2>
+
+            <p class="section-description">
+                Building a strong foundation in business while exploring
+                new ideas and opportunities.
+            </p>
+
+            <div class="education-card">
+
+                <div class="education-icon">🎓</div>
+
+                <div>
+                    <h3>Rutgers Business School</h3>
+
+                    <p>
+                        Rutgers University – New Brunswick
+                    </p>
+
+                    <p>
+                        Business Student
+                    </p>
+
+                    <!-- Add your major, expected graduation,
+                         and relevant coursework here. -->
+
+                    <span class="education-date">
+                        New Brunswick, New Jersey
+                    </span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills">
+        <div class="container">
+
+            <p class="section-label">What I bring</p>
+
+            <h2 class="section-title">Skills & Interests</h2>
+
+            <p class="section-description">
+                Areas I'm developing through my education, experiences,
+                and independent learning. Update these to reflect your
+                actual skills.
+            </p>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <h3>Business</h3>
+
+                    <div class="skill-tags">
+                        <span>Business Strategy</span>
+                        <span>Marketing</span>
+                        <span>Finance</span>
+                        <span>Entrepreneurship</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Professional</h3>
+
+                    <div class="skill-tags">
+                        <span>Communication</span>
+                        <span>Teamwork</span>
+                        <span>Problem Solving</span>
+                        <span>Organization</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Technical</h3>
+
+                    <div class="skill-tags">
+                        <span>Microsoft Excel</span>
+                        <span>PowerPoint</span>
+                        <span>Data Analysis</span>
+                        <span>Research</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS & EXPERIENCE -->
+    <section id="projects">
+        <div class="container">
+
+            <p class="section-label">My work</p>
+
+            <h2 class="section-title">Projects & Experience</h2>
+
+            <p class="section-description">
+                A collection of projects, academic work, and experiences
+                that demonstrate my interests and growth.
+            </p>
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <div class="project-banner">📊</div>
+
+                    <div class="project-content">
+                        <span class="project-type">
+                            Academic Project
+                        </span>
+
+                        <h3>Business Case Study</h3>
+
+                        <p>
+                            An analysis of a business challenge, including
+                            research, key findings, and potential
+                            recommendations.
+                        </p>
+
+                        <!-- Replace this with a real project
+                             and describe your contribution. -->
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-banner">💡</div>
+
+                    <div class="project-content">
+                        <span class="project-type">
+                            Strategy & Innovation
+                        </span>
+
+                        <h3>Marketing or Business Proposal</h3>
+
+                        <p>
+                            A project exploring a target audience,
+                            evaluating opportunities, and developing
+                            ideas to support business growth.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-banner">🤝</div>
+
+                    <div class="project-content">
+                        <span class="project-type">
+                            Leadership & Teamwork
+                        </span>
+
+                        <h3>Campus or Community Involvement</h3>
+
+                        <p>
+                            Highlight a student organization, volunteer
+                            experience, event, or collaborative initiative
+                            and the impact you made.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-banner">📈</div>
+
+                    <div class="project-content">
+                        <span class="project-type">
+                            Personal Development
+                        </span>
+
+                        <h3>Independent Learning</h3>
+
+                        <p>
+                            Showcase a course, certification, personal
+                            project, or new skill you've developed
+                            outside the classroom.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="container">
+
+            <p class="section-label">Let's connect</p>
+
+            <h2>I'd love to hear from you.</h2>
+
+            <p>
+                Whether you're interested in connecting, discussing
+                opportunities, or sharing ideas, feel free to reach out.
+                I'm always happy to learn from new people.
+            </p>
+
+            <!-- Replace the email address below with your own. -->
+            <a
+                href="mailto:your.email@example.com"
+                class="button"
+            >
+                Email Me →
+            </a>
+
+            <div class="social-links">
+
+                <!-- Replace # with your actual LinkedIn profile URL. -->
+                <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
+
+                <!-- Optional: add a GitHub, personal website,
+                     or other professional profile. -->
+                <a href="#home">Back to Top ↑</a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>
+                © <span id="year"></span> Prisha Chatterjee.
+                Personal Portfolio.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Automatically display the current year.
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
